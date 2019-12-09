@@ -13,20 +13,17 @@ export const removeNonAscii = (text: string) => {
 };
 
 export const filterTokens = (tokens: string[], ignoredTokens: string[]) => {
-    return tokens
-        .map(t => t.trim().toUpperCase())
-        .filter(t => !ignoredTokens.includes(t.trim().toLowerCase()));
+    return tokens.filter(t => !ignoredTokens.includes(t.toLowerCase()));
 };
 
 export const generateMessageId = (text: string, minLength = 25) => {
-    const rawTokens = removeNonAscii(text)
-        .trim()
-        .split(' ');
+    const rawTokens = removeNonAscii(text).split(' ');
     const tokens = filterTokens(rawTokens, config.ignoreTokens);
-    let id = 'TR';
+
+    let id = config.messageIdPrefix;
     let i = 0;
     while (id.length < minLength && i < tokens.length) {
-        id += '_' + tokens[i];
+        id += '_' + tokens[i].toUpperCase();
         i++;
     }
     return id;
