@@ -35,23 +35,33 @@
             "properties": {
                 "intlExtractor.messagesFilePath": {
                     "type": "string",
-                    "scope": "resource"
+                    "description": " Path to the file where a new message will be inserted. Path is relative to the workspace's root. Currently only JSON or javascript and typescript files with `defineMessages` function are supported."
                 },
                 "intlExtractor.messageComponent": {
                     "type": "string",
                     "default": "FormattedMessage",
-                    "scope": "window"
+                    "description": "Name of the message component."
+                },
+                "intlExtractor.messageIdPrefix": {
+                    "type": "string",
+                    "default": "TR",
+                    "description": "Prefix used for generated IDs of messages"
                 },
                 "intlExtractor.ignoreTokens": {
                     "type": "array",
+                    "description": "List of words that will be excluded when generating the message ID.",
                     "default": [
                         "a",
                         "an",
                         "the",
                         ".",
                         ","
-                    ],
-                    "scope": "resource"
+                    ]
+                },
+                "intlExtractor.trailingComma": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Specifies whether to append trailing comma after a message object. Applies only with specified messagesFilePath leading to javascript/typescript file."
                 }
             }
         }
