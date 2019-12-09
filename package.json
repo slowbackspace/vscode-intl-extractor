@@ -1,7 +1,7 @@
 {
     "name": "intlextractor",
     "displayName": "IntlExtractor",
-    "description": "Extracts string to react-intl compatible message objects.",
+    "description": "Extracts text selection to a message object compatible with react-intl message objects.",
     "version": "0.0.1",
     "publisher": "slowbackspace",
     "engines": {
@@ -29,6 +29,31 @@
                     "when": "editorHasSelection"
                 }
             ]
+        },
+        "configuration": {
+            "title": "IntlExtractor",
+            "properties": {
+                "intlExtractor.messagesFilePath": {
+                    "type": "string",
+                    "scope": "resource"
+                },
+                "intlExtractor.messageComponent": {
+                    "type": "string",
+                    "default": "FormattedMessage",
+                    "scope": "window"
+                },
+                "intlExtractor.ignoreTokens": {
+                    "type": "array",
+                    "default": [
+                        "a",
+                        "an",
+                        "the",
+                        ".",
+                        ","
+                    ],
+                    "scope": "resource"
+                }
+            }
         }
     },
     "scripts": {
