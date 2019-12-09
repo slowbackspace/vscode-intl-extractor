@@ -12,7 +12,6 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.extractMessage', () => {
         const editor = vscode.window.activeTextEditor;
-        console.log(editor);
         if (!editor) {
             return;
         }
