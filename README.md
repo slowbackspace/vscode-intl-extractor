@@ -6,7 +6,7 @@ Extracts text selection to an object compatible with react-intl message objects.
 
 This extension exposes the following settings:
 
--   `intlExtractor.messagesFilePath`: path to the file where new message will be added
+-   `intlExtractor.messagesFilePath`: Path to the file where a new message will be inserted. Path is relative to the workspace's root. Currently only JSON file is supported.
 -   `intlExtractor.messageComponent`: Name of the message component (default is `FormattedMessage`)
 -   `intlExtractor.ignoreTokens`: List of words that will be excluded when generating the message ID (default is `['a', 'an', 'the', '.', ',']`).
 
