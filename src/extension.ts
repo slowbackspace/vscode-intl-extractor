@@ -27,11 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
             }
         };
 
-        const messageObjectStr = JSON.stringify(messageObject)
+        const messageObjectStr = JSON.stringify(messageObject, null, 4)
             .slice(1, -1)
             .trim(); // remove first and last char (curly brackets);
-
-        vscode.env.clipboard.writeText(messageObjectStr);
 
         // TODO: handle values
         editor.edit(builder => {
@@ -41,6 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
             );
         });
 
+        vscode.env.clipboard.writeText(messageObjectStr);
         vscode.window.showInformationMessage('Copied to clipboard');
     });
 
