@@ -63,7 +63,7 @@ export const writeMessageToFile = async (messagesFilePath: string, message: Mess
         )
     ) {
         let messageFileText = messageFile.getText();
-        const re = /defineMessages\((.*?)\);/gms; // hacky way to get an object passed as param to defineMessages func
+        const re = /defineMessages\((.*?)(.as const)?\);/gms; // hacky way to get an object passed as param to defineMessages func
         const result = re.exec(messageFileText);
         if (!result || result.length < 2) {
             throw new Error("Couldn't parse the message file");
