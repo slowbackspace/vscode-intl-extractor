@@ -10,6 +10,6 @@ suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Start all tests.');
 
     test('generate message id', () => {
-        assert.equal(generateMessageId('sample text message'), '');
+        assert.equal(generateMessageId('sample text message'), 'TR_SAMPLE_TEXT_MESSAGE');
     });
 });
