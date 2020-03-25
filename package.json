@@ -56,7 +56,8 @@
                         "an",
                         "the",
                         ".",
-                        ","
+                        ",",
+                        "&"
                     ]
                 },
                 "intlExtractor.trailingComma": {
