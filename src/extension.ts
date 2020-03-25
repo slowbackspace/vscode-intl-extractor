@@ -34,6 +34,8 @@ export function activate(context: vscode.ExtensionContext) {
             .trim(); // remove first and last char (curly brackets);
 
         // TODO: handle values
+        // TODO: handle old format <${config.messageComponent} {...messages.${messageId}} />
+        const component = `<${config.messageComponent} id="${messageId}}" />`;
         editor.edit(builder => {
             builder.replace(
                 editor.selection,
