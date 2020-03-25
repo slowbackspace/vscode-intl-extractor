@@ -2,7 +2,7 @@
     "name": "intlextractor",
     "displayName": "IntlExtractor",
     "description": "Extracts text selection to a message object compatible with react-intl message objects.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repository": "https://github.com/slowbackspace/vscode-intl-extractor",
     "publisher": "slowbackspace",
     "engines": {
