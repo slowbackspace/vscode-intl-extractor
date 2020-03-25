@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
         editor.edit(builder => {
             builder.replace(
                 editor.selection,
-                `<${config.messageComponent} {...messages.${messageId}} />`
+                component
             );
         });
 
